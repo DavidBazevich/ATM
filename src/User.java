@@ -27,7 +27,7 @@ public class User {
         return user_name;
     }
     public void setFunds(int fund){
-        funds = fund;
+        this.funds = fund;
     }
 
     public String getInfo(){

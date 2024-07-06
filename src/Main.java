@@ -8,10 +8,10 @@ public class Main {
         int funds;
         int choice;
         int money;
+        int ATM_limit = 5000000;
 
         ReaderDataFromFile r = new ReaderDataFromFile();
         r.read("data.txt");
-        //r.getUser(3).getInfo();
 
         Scanner con = new Scanner(System.in);
 
@@ -41,8 +41,9 @@ public class Main {
                     case 2:
                         System.out.println("Enter the amount of money you want to withdraw:");
                         money = con.nextInt();
-                        if(funds >= money){
+                        if(funds >= money || money <= ATM_limit){
                             funds -= money;
+                            ATM_limit -= money;
                             DataWriter.write(bankcard_number, password, "data.txt", funds);
                             System.out.println("Money successfully withdrawn!");
                             System.out.println("Remaining balance: " + funds);

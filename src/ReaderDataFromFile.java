@@ -60,6 +60,6 @@ public class ReaderDataFromFile {
     }
 
     public int sizeUserList(){
-        return users.size()/2;
+        return users.size();
     }
 }
